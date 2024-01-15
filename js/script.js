@@ -17,8 +17,17 @@ titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
 countdownElement.innerText = seconds;
 // invoco la funzione per generare un numero casuale
 const numbers = getRandomNumber (min, max, numbersToGenerate);
+// inietto i numeri nell'ul
+let items = "";
 
-console.log(numbers);
+for (let number of numbers) {
+    items += `<li>${number}</li>`;
+console.log(items);
+}
+
+listOfNumbers.innerHTML = items;
+
+
 setTimeout (function(){
     listOfNumbers.classList.add("d-none");
     answersField.classList.remove("d-none")
