@@ -10,7 +10,7 @@ const formSection = document.querySelector(".answers-box");
 const numbersToGenerate = 5;
 const min = 1;
 const max = 100;
-let seconds = 5;
+let seconds = 30;
 
 // genero un titolo dinamico 
 titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
@@ -34,8 +34,8 @@ const countdown = setInterval (() =>{
     countdownElement.innerText = --seconds;
     if (seconds === 0){
         clearInterval(countdown);
-        answersField.classList.remove("d-none");
-        listOfNumbers.classList.add("d-none");
+        formSection.classList.remove("d-none");
+        listSection.classList.add("d-none");
     }
 }, 1000)
 
