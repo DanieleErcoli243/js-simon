@@ -12,7 +12,7 @@ const formTitle = document.getElementById("challenge")
 const numbersToGenerate = 5;
 const min = 1;
 const max = 100;
-let seconds = 5;
+let seconds = 30;
 
 // genero un titolo dinamico 
 titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
@@ -24,7 +24,7 @@ let items = "";
 let inputFields = "";
 for (let number of numbers) {
     items += `<li>${number}</li>`;
-    inputFields += `<input type="number" min="1" max="5" required>`
+    inputFields += `<input type="number" min="${min}" max="${max}" required>`
 }
 
 listOfNumbers.innerHTML = items;
@@ -45,10 +45,7 @@ formTitle.innerText = "Scrivi i numeri che ricordi."
 // recupero tutti gli input
 const inputs = document.querySelectorAll("input");
 
-answersField.addEventListener ("submit", function(e){
-    e.preventDefault;
-    
-})
+answersField.addEventListener ("submit", confirm);
 
 
 
