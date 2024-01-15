@@ -8,10 +8,18 @@
 /* generici */
 
 section{
-    height: 100%;
+    height: 50vh;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+
+
+h1 {
+    font-size: 42px;
 }
 
 /* lista dei numeri */
@@ -22,7 +30,7 @@ section{
     font-size: 24px;
     text-align: center;
     list-style-type: none;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 /* utili */
