@@ -29,8 +29,8 @@ h1 {
 
 /* utili */
 
-ul.d-none,
-form.d-none{
+
+d-none{
     display: none;
 }
 
