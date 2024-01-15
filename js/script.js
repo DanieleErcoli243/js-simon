@@ -15,16 +15,10 @@ const seconds = 30;
 titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
 // mostro il countdwon in pagina
 countdownElement.innerText = seconds;
-// funzione per generare un numero casuale
+// invoco la funzione per generare un numero casuale
+const numbers = getRandomNumber (min, max, numbersToGenerate);
 
-const randomNumbers =[];
-for (let i = 0; i < numberOfNumbers; i++) {
-    const randomNumber = getRandomNumber(100);
-    const listItem = `<li>${randomNumber}</li>`
-    randomNumbers.push.apply(randomNumber);
-    listOfNumbers.innerHTML += listItem;
-}
-
+console.log(numbers);
 setTimeout (function(){
     listOfNumbers.classList.add("d-none");
     answersField.classList.remove("d-none")
