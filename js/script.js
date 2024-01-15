@@ -4,7 +4,8 @@ const listOfNumbers = document.getElementById("numbers");
 const answersField = document.getElementById("answers");
 const scoreElement = document.getElementById("score-message"); 
 const countdownElement = document.getElementById("countdown"); 
-
+const listSection = document.querySelector(".numbers-box");
+const formSection = document.querySelector(".answers-box");
 // informazioni iniziali
 const numbersToGenerate = 5;
 const min = 1;
