@@ -15,3 +15,36 @@ const getRandomNumber = (min, max, numbersToGenerate) => {
     }
     return randomNumbers;
 }
+
+
+/**
+ * it prevents the page to refresh when the button is clicked and checks the answers of the user
+ * @param {event} e the event triggered by the click of the user 
+ */
+const confirm = e => {
+    // impedisco l'aggiornamento della pagina
+    e.preventDefault();
+    // dichiaro un array per raccogliere le risposte dell'utente
+    const userAnswers = [];
+    for (let i = 0; i < inputs.length; i++) {
+        // raccolgo le rispsote dell'utente
+        const field = inputs[i];
+        // converto le risposte in numeri 
+        const value = parseInt(field.value);
+        // controllo che le risposte siano valide
+        if (isNaN(value) && value <= min && value >= max && !userAnswers.includes(value)) {
+            userAnswers.push(value);
+        }
+    }
+    // controllo se l'utente ha sbagliato e glielo comunico
+    if(userAnswers.length !== numbersToGenerate) {
+        scoreElement.innerText = "I valori inseriti non sono validi o sono ripetuti";
+    }
+    // controllo se l'utente ha vinto e gli dico anche quanti numeri ha indovinato
+    const rigthAnswers = [];
+    for (let i = 0; i < userAnswers.length; i++) {
+        const answer = userAnswers[i];
+        if (numbers.includes(i)) rigthAnswers.push(i);
+    }
+    scoreElement.innerText = `Hai indovinato ${rigthAnswers.length} numeri. (${rigthAnswers})`;
+}
