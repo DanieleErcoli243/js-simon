@@ -8,6 +8,7 @@
 /* generici */
 
 section{
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +22,7 @@ section{
     font-size: 24px;
     text-align: center;
     list-style-type: none;
+    margin-top: 50px;
 }
 
 /* utili */
