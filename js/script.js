@@ -2,36 +2,44 @@
 const titleElement = document.querySelector("h1");
 const listOfNumbers = document.getElementById("numbers");
 const answersField = document.getElementById("answers");
-const scoreElement = document.getElementById("score-message") 
-const countdownElement = document.getElementById("countdown") 
-
+const scoreElement = document.getElementById("score-message"); 
+const countdownElement = document.getElementById("countdown"); 
+const numbersToGuess = document.querySelector(".numbers-box");
+const answersContainer = document.querySelector(".answers-box");
 // informazioni iniziali
 const numbersToGenerate = 5;
 const min = 1;
 const max = 100;
-const seconds = 30;
+let seconds = 5;
 
 // genero un titolo dinamico 
 titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
-// mostro il countdwon in pagina
-countdownElement.innerText = seconds;
+
 // invoco la funzione per generare un numero casuale
 const numbers = getRandomNumber (min, max, numbersToGenerate);
-// inietto i numeri nell'ul
+// inietto i numeri nell'ul e genero gli input
 let items = "";
-
+let inputFields = "";
 for (let number of numbers) {
     items += `<li>${number}</li>`;
-console.log(items);
+    inputFields += `<input type="number" min="1" max="5" required>`
 }
 
 listOfNumbers.innerHTML = items;
+answersField.innerHTML = inputFields;
+
+// mostro il countdwon in pagina
+countdownElement.innerText = seconds;
+const countdown = setInterval (() =>{
+    countdownElement.innerText = --seconds;
+    if (seconds === 0){
+        clearInterval(countdown);
+        answersContainer.classList.remove("d.none");
+        numbersToGuess.classList.add("d.none");
+    }
+}, 1000)
 
 
-setTimeout (function(){
-    listOfNumbers.classList.add("d-none");
-    answersField.classList.remove("d-none")
-});
 
 answersField.addEventListener ("submit", function(e){
     e.preventDefault;
