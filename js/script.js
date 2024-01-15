@@ -13,6 +13,8 @@ const seconds = 30;
 
 // genero un titolo dinamico 
 titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
+// mostro il countdwon in pagina
+countdownElement.innerText = seconds;
 // funzione per generare un numero casuale
 const getRandomNumber = (max) => {
     return Math.floor(Math.random() * max) + 1;
