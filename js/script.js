@@ -6,11 +6,13 @@ const scoreElement = document.getElementById("score-message");
 const countdownElement = document.getElementById("countdown"); 
 const listSection = document.querySelector(".numbers-box");
 const formSection = document.querySelector(".answers-box");
+const button = document.getElementById("button");
+const formTitle = document.getElementById("challenge")
 // informazioni iniziali
 const numbersToGenerate = 5;
 const min = 1;
 const max = 100;
-let seconds = 30;
+let seconds = 5;
 
 // genero un titolo dinamico 
 titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
@@ -38,7 +40,8 @@ const countdown = setInterval (() =>{
         listSection.classList.add("d-none");
     }
 }, 1000)
-
+// aggiungo un titolo alla section cogli input
+formTitle.innerText = "Scrivi i numeri che ricordi."
 
 
 answersField.addEventListener ("submit", function(e){
