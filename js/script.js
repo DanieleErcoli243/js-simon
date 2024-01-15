@@ -4,8 +4,7 @@ const listOfNumbers = document.getElementById("numbers");
 const answersField = document.getElementById("answers");
 const scoreElement = document.getElementById("score-message"); 
 const countdownElement = document.getElementById("countdown"); 
-const numbersToGuess = document.querySelector(".numbers-box");
-const answersContainer = document.querySelector(".answers-box");
+
 // informazioni iniziali
 const numbersToGenerate = 5;
 const min = 1;
@@ -34,9 +33,8 @@ const countdown = setInterval (() =>{
     countdownElement.innerText = --seconds;
     if (seconds === 0){
         clearInterval(countdown);
-        answersContainer.classList.remove("d.none");
-        numbersToGuess.classList.add("d.none");
-        console.log(answersContainer, numbersToGuess)
+        answersField.classList.remove("d-none");
+        listOfNumbers.classList.add("d-none");
     }
 }, 1000)
 
