@@ -42,7 +42,8 @@ const countdown = setInterval (() =>{
 }, 1000)
 // aggiungo un titolo alla section cogli input
 formTitle.innerText = "Scrivi i numeri che ricordi."
-
+// recupero tutti gli input
+const inputs = document.querySelectorAll("input");
 
 answersField.addEventListener ("submit", function(e){
     e.preventDefault;
