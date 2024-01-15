@@ -3,8 +3,14 @@ const titleElement = document.querySelector("h1");
 const listOfNumbers = document.getElementById("numbers");
 const answersField = document.getElementById("answers");
 const scoreElement = document.getElementById("score-message") 
+const countdownElement = document.getElementById("countdown") 
+
+// informazioni iniziali
 const numberOfNumbers = 5;
+const min = 1;
+const max = 100;
 const seconds = 30;
+
 // genero un titolo dinamico 
 titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
 // funzione per generare un numero casuale
