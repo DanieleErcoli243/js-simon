@@ -36,6 +36,7 @@ const countdown = setInterval (() =>{
         clearInterval(countdown);
         answersContainer.classList.remove("d.none");
         numbersToGuess.classList.add("d.none");
+        console.log(answersContainer, numbersToGuess)
     }
 }, 1000)
 
