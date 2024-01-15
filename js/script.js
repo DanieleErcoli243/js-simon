@@ -6,7 +6,7 @@ const scoreElement = document.getElementById("score-message")
 const countdownElement = document.getElementById("countdown") 
 
 // informazioni iniziali
-const numberOfNumbers = 5;
+const numbersToGenerate = 5;
 const min = 1;
 const max = 100;
 const seconds = 30;
@@ -16,9 +16,7 @@ titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
 // mostro il countdwon in pagina
 countdownElement.innerText = seconds;
 // funzione per generare un numero casuale
-const getRandomNumber = (max) => {
-    return Math.floor(Math.random() * max) + 1;
-}
+
 const randomNumbers =[];
 for (let i = 0; i < numberOfNumbers; i++) {
     const randomNumber = getRandomNumber(100);
