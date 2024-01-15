@@ -5,15 +5,25 @@
     box-sizing: border-box;
 }
 
+/* generici */
+
 section{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* lista dei numeri */
+
 #numbers{
     display: flex;
     gap: 10px;
     font-size: 24px;
     text-align: center;
+}
+
+/* utili */
+
+.d-none{
+    display: none;
 }
