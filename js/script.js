@@ -1,5 +1,6 @@
 // recupero gli elementi dalla pagina
 const titleElement = document.querySelector("h1");
+const numberElement = document.getElementById("number-box");
 const listOfNumbers = document.getElementById("numbers");
 const answersField = document.querySelector(".answers");
 const inputBox = document.querySelector(".inputs");
@@ -40,13 +41,11 @@ const countdown = setInterval (() =>{
         clearInterval(countdown);
         titleElement.innerText = "Scrivi i numeri che ricordi (anche non in ordine)." 
         answersField.classList.remove("d-none");
-        listOfNumbers.classList.add("d-none");
+        numberElement.classList.add("d-none");
         clearInterval(countdown);
     }
 
 }, 1000)
-
-
 
 
 
