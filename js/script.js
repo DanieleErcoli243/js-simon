@@ -31,7 +31,7 @@ for (let number of numbers) {
 listOfNumbers.innerHTML = items;
 inputBox.innerHTML = input;
 // recupero tutti gli input
-
+const inputs = document.querySelectorAll("input");
 
 // mostro il countdwon in pagina
 countdownElement.innerText = seconds;
@@ -47,7 +47,7 @@ const countdown = setInterval (() =>{
 
 }, 1000)
 
-const inputs = document.querySelectorAll("input");
+
 
 answersField.addEventListener ("submit", confirm);
 
