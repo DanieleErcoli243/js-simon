@@ -54,5 +54,6 @@ const confirm = e => {
         const answer = userAnswers[i];
         if (numbers.includes(i)) rigthAnswers.push(i);
     }
+
     scoreElement.innerText = `Hai indovinato ${rigthAnswers.length} numeri. (${rigthAnswers})`;
 }
