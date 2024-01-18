@@ -4,10 +4,8 @@ const listOfNumbers = document.getElementById("numbers");
 const answersField = document.getElementById("answers");
 const scoreElement = document.getElementById("score-message"); 
 const countdownElement = document.getElementById("countdown"); 
-const listSection = document.querySelector(".numbers-box");
-const formSection = document.querySelector(".answers-box");
 const button = document.getElementById("button");
-const formTitle = document.getElementById("challenge")
+
 // informazioni iniziali
 const numbersToGenerate = 5;
 const min = 1;
@@ -21,10 +19,10 @@ titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
 const numbers = getRandomNumber (min, max, numbersToGenerate);
 // inietto i numeri nell'ul e genero gli input
 let items = "";
-let inputFields = "";
 for (let number of numbers) {
     items += `<li>${number}</li>`;
-    inputFields += `<input type="number" min="${min}" max="${max}" required>`
+    let input = ``;
+let inputFields += `<input type="number" min="${min}" max="${max}" required>`
 }
 
 listOfNumbers.innerHTML = items;
@@ -38,7 +36,9 @@ const countdown = setInterval (() =>{
         clearInterval(countdown);
         formSection.classList.remove("d-none");
         listSection.classList.add("d-none");
+        countdown = clearInterval();
     }
+
 }, 1000)
 // aggiungo un titolo alla section cogli input
 formTitle.innerText = "Scrivi i numeri che ricordi."
