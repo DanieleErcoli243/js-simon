@@ -12,7 +12,7 @@ const button = document.getElementById("button");
 const numbersToGenerate = 5;
 const min = 1;
 const max = 100;
-let seconds = 5;
+let seconds = 30;
 
 // genero un titolo dinamico 
 titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
