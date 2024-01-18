@@ -44,6 +44,7 @@ const confirm = e => {
             userAnswers.push(value);
         }
     }
+    console.log(userAnswers);
     // controllo se l'utente ha sbagliato e glielo comunico
     if(userAnswers.length !== numbersToGenerate) {
         scoreElement.innerText = "I valori inseriti non sono validi o sono ripetuti";
@@ -52,7 +53,7 @@ const confirm = e => {
     const rigthAnswers = [];
     for (let i = 0; i < userAnswers.length; i++) {
         const answer = userAnswers[i];
-        if (numbers.includes(i)) rigthAnswers.push(i);
+        if (numbers.includes(answer)) rigthAnswers.push(i);
     }
 
     scoreElement.innerText = `Hai indovinato ${rigthAnswers.length} numeri. (${rigthAnswers})`;
