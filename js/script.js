@@ -21,8 +21,8 @@ const numbers = getRandomNumber (min, max, numbersToGenerate);
 // inietto i numeri nell'ul e genero gli input
 let items = "";
 let input = ``;
-for (let i = 0; i < numbersToGenerate; i++) {
-    items += `<li>${i}</li>`;
+for (let number of numbers) {
+    items += `<li>${number}</li>`;
     
     input += `<input type="number" min="${min}" max="${max}" required>`;
 }
