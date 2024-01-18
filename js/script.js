@@ -1,7 +1,8 @@
 // recupero gli elementi dalla pagina
 const titleElement = document.querySelector("h1");
 const listOfNumbers = document.getElementById("numbers");
-const answersField = document.getElementById("answers");
+const answersField = document.querySelector(".answers");
+const inputBox = document.querySelector(".inputs");
 const scoreElement = document.getElementById("score-message"); 
 const countdownElement = document.getElementById("countdown"); 
 const button = document.getElementById("button");
@@ -10,7 +11,7 @@ const button = document.getElementById("button");
 const numbersToGenerate = 5;
 const min = 1;
 const max = 100;
-let seconds = 30;
+let seconds = 5;
 
 // genero un titolo dinamico 
 titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
@@ -19,14 +20,17 @@ titleElement.innerText = `Memorizzali! Hai solo ${seconds} secondi.`;
 const numbers = getRandomNumber (min, max, numbersToGenerate);
 // inietto i numeri nell'ul e genero gli input
 let items = "";
-for (let number of numbers) {
-    items += `<li>${number}</li>`;
-    let input = ``;
-let inputFields += `<input type="number" min="${min}" max="${max}" required>`
+let input = ``;
+for (let i = 0; i < numbersToGenerate; i++) {
+    items += `<li>${i}</li>`;
+    
+    input += `<input type="number" min="${min}" max="${max}" required>`;
 }
 
 listOfNumbers.innerHTML = items;
-answersField.innerHTML = inputFields;
+inputBox.innerHTML = input;
+// recupero tutti gli input
+const inputs = document.querySelectorAll("input");
 
 // mostro il countdwon in pagina
 countdownElement.innerText = seconds;
@@ -34,16 +38,17 @@ const countdown = setInterval (() =>{
     countdownElement.innerText = --seconds;
     if (seconds === 0){
         clearInterval(countdown);
-        formSection.classList.remove("d-none");
-        listSection.classList.add("d-none");
-        countdown = clearInterval();
+        titleElement.innerText = "Scrivi i numeri che ricordi (anche non in ordine)." 
+        answersField.classList.remove("d-none");
+        listOfNumbers.classList.add("d-none");
+        clearInterval(countdown);
     }
 
 }, 1000)
-// aggiungo un titolo alla section cogli input
-formTitle.innerText = "Scrivi i numeri che ricordi."
-// recupero tutti gli input
-const inputs = document.querySelectorAll("input");
+
+
+
+
 
 answersField.addEventListener ("submit", confirm);
 
