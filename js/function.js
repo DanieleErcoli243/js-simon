@@ -1,3 +1,4 @@
+// funzione per generare numeri casuali
 /**
  * It generates an amount of random numbers
  * @param {number} min the minimum number to be generated
@@ -17,6 +18,13 @@ const getRandomNumber = (min, max, numbersToGenerate) => {
 }
 
 
+
+
+
+
+
+
+// funzione che blocca il riavvio della pagina, raccoglie le risposte dell'utente e conferma il risultato
 /**
  * it prevents the page to refresh when the button is clicked and checks the answers of the user
  * @param {event} e the event triggered by the click of the user 
