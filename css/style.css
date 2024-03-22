@@ -1,5 +1,5 @@
 /* css reset */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,7 +7,7 @@
 
 /* generici */
 
-main{
+main {
     height: 50vh;
     text-align: center;
     display: flex;
@@ -23,8 +23,13 @@ h1 {
     margin-bottom: 20px;
 }
 
-#countdown{
+#countdown {
     font-size: 32px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #score-message {
@@ -34,13 +39,13 @@ h1 {
 /* utili */
 
 
-.d-none{
+.d-none {
     display: none;
 }
 
 /* lista dei numeri */
 
-#numbers{
+#numbers {
     display: flex;
     gap: 20px;
     font-size: 24px;
@@ -51,16 +56,17 @@ h1 {
 
 /* form */
 
-.answers{
+.answers {
     margin-top: 20px;
 }
 
-.inputs{
+.inputs {
     display: flex;
     gap: 10px;
+
 }
 
-#button{
+#button {
     background-color: green;
     color: red;
     padding: 10px 15px;
@@ -68,4 +74,3 @@ h1 {
     border-radius: 10px;
     cursor: pointer;
 }
-
