@@ -18,15 +18,7 @@ const getRandomNumber = (min, max, numbersToGenerate) => {
 }
 
 
-/* const validateForm = () => {
-    inputs.forEach(input => {
-        const answer = input.value;
-        if (answer < 0 || isNaN(answer) || answer === '') return;
 
-        if (answer)
-    })
-}
- */
 
 
 
@@ -41,6 +33,7 @@ const getRandomNumber = (min, max, numbersToGenerate) => {
 const confirm = e => {
     // impedisco l'aggiornamento della pagina
     e.preventDefault();
+    const inputs = document.querySelectorAll('input');
 
     // dichiaro un array per raccogliere le risposte dell'utente
     const userAnswers = [];
@@ -51,9 +44,8 @@ const confirm = e => {
         const value = parseInt(field.value);
 
         // controllo che le risposte siano valide
-        if (isNaN(value) && value <= min && value >= max && !userAnswers.includes(value)) {
-            userAnswers.push(value);
-        }
+        if (isNaN(value) && value <= min && value >= max && !userAnswers.includes(value)) return;
+        else userAnswers.push(value);
 
     }
 
