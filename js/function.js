@@ -7,7 +7,7 @@
  * @returns an array of random numbers
  */
 const getRandomNumber = (min, max, numbersToGenerate) => {
-    const randomNumbers =[];
+    const randomNumbers = [];
     while (randomNumbers.length < numbersToGenerate) {
         const randomNumber = Math.floor(Math.random() * (max + 1 - min)) + min;
         if (!randomNumbers.includes(randomNumber)) {
@@ -18,6 +18,15 @@ const getRandomNumber = (min, max, numbersToGenerate) => {
 }
 
 
+/* const validateForm = () => {
+    inputs.forEach(input => {
+        const answer = input.value;
+        if (answer < 0 || isNaN(answer) || answer === '') return;
+
+        if (answer)
+    })
+}
+ */
 
 
 
@@ -32,7 +41,7 @@ const getRandomNumber = (min, max, numbersToGenerate) => {
 const confirm = e => {
     // impedisco l'aggiornamento della pagina
     e.preventDefault();
-    
+
     // dichiaro un array per raccogliere le risposte dell'utente
     const userAnswers = [];
     for (let i = 0; i < inputs.length; i++) {
@@ -40,16 +49,16 @@ const confirm = e => {
         const field = inputs[i];
         // converto le risposte in numeri 
         const value = parseInt(field.value);
-        
+
         // controllo che le risposte siano valide
         if (isNaN(value) && value <= min && value >= max && !userAnswers.includes(value)) {
             userAnswers.push(value);
-        } 
-        
+        }
+
     }
 
     // controllo se l'utente ha sbagliato e glielo comunico
-    if(userAnswers.length !== numbersToGenerate) {
+    if (userAnswers.length !== numbersToGenerate) {
         scoreElement.innerText = "I valori inseriti non sono validi o sono ripetuti";
     }
     // controllo se l'utente ha vinto e gli dico anche quanti numeri ha indovinato
@@ -58,6 +67,6 @@ const confirm = e => {
         const answer = userAnswers[i];
         if (numbers.includes(answer)) rigthAnswers.push(answer);
     }
-    
+
     scoreElement.innerText = `Hai indovinato ${rigthAnswers.length} numeri. (${rigthAnswers})`;
 }

@@ -67,10 +67,11 @@ input {
 }
 
 #button {
-    background-color: green;
+    background-color: rgb(2, 217, 2);
     color: red;
     padding: 10px 15px;
     margin-top: 20px;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 24px;
 }
